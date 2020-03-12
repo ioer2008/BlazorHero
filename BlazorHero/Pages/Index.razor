@@ -1,0 +1,92 @@
+﻿@page "/"
+
+<h1>Top Heroes</h1>
+<br />
+<div class="row">
+    @if (TopHeroes == null)
+    {
+        <div class="col-md-12">Loading...</div>
+    }
+    else
+    {
+        foreach (var hero in TopHeroes)
+        {
+            <div class="col-md-3">
+                <div class="card bg-light mb-3 text-center">
+                    <div class="card-body">
+                        <h3>
+                            <a href="/heroes/detail/@hero.Id">
+                                @hero.Name
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<h2>Search Heroes</h2>
+<br />
+<div class="row">
+    <div class="col-4">
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="hero-search">
+                    <span class="oi oi-magnifying-glass"></span>
+                </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Hero" aria-label="Hero Search" aria-describedby="hero-search" @bind-value="Keyword" @bind-value:event="oninput" />
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-4">
+        @if (SearchResults != null)
+        {
+            <ul class="list-group">
+                @foreach (var item in SearchResults)
+                {
+                    <li class="list-group-item">
+                        <a href="/heroes/detail/@item.Id">
+                            <h4><span class="oi oi-person"></span> @item.Name </h4>
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code{
+    public IList<Hero> TopHeroes { get; set; }
+    public IList<Hero> SearchResults { get; set; }
+
+    private string _keyword;
+
+    public string Keyword
+    {
+        get => _keyword;
+        set
+        {
+            _keyword = value;
+
+            Search(value);
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        TopHeroes = HeroService.GetTopHeroes();
+    }
+
+    protected void Search(string input)
+    {
+        SearchResults = HeroService.GetHeroes(input);
+    }
+}

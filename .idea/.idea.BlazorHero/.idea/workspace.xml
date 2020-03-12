@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98247fc2-29c8-4d88-a842-4e4f2c42038f" name="Default Changelist" comment="" />
+    <list default="true" id="98247fc2-29c8-4d88-a842-4e4f2c42038f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/BlazorHero/obj/Debug/netcoreapp3.1/BlazorHero.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorHero/obj/Debug/netcoreapp3.1/BlazorHero.csprojAssemblyReference.cache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584018477157</updated>
-      <workItem from="1584018480744" duration="2792000" />
+      <workItem from="1584018480744" duration="3359000" />
     </task>
     <servers />
   </component>
@@ -102,12 +104,28 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="2">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
       </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+        <option value="2" />
+      </set>
     </option>
   </component>
   <component name="WindowStateProjectService">
